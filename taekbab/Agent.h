@@ -11,5 +11,7 @@
 @interface Agent : NSObject
 
 + (NSString*)toString;
++ (NSString*)currentAppVersion;
++ (NSString*)currentBuildVersion;
 
 @end

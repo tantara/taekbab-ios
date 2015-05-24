@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GAITrackedViewController.h"
 
-@interface SecondViewController : GAITrackedViewController<UITableViewDelegate, UITableViewDataSource>
+#import "CommonViewController.h"
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@interface SecondViewController : CommonViewController<UITableViewDelegate, UITableViewDataSource>
+
+// for table
 @property (nonatomic, strong) NSMutableDictionary *dataJson;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+- (void) updateUI:(NSDictionary*) json;
 - (IBAction)refresh:(id)sender;
 
 @end

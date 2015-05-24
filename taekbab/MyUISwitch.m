@@ -8,38 +8,35 @@
 
 #import "MyUISwitch.h"
 
+#import "ColorUtils.h"
+
 @implementation MyUISwitch
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (id) init {
+    self = [super init];
+    if(self) {
+        UIColor * color = [ColorUtils globalColor];
+        [self setOnTintColor:color];
+    }
+    return self;
 }
-*/
 
 - (id) initWithFrame:(CGRect)frame {
-            self = [super initWithFrame:frame];
-    if(!self) {
-        self = [super initWithFrame:frame];
+    self = [super initWithFrame:frame];
+    if(self) {
+        UIColor * color = [ColorUtils globalColor];
+        [self setOnTintColor:color];
     }
     return self;
 }
 
 - (id) initWithCoder:(NSCoder *)aDecoder {
-            self = [super initWithCoder:aDecoder];
-    if(!self) {
-        self = [super initWithCoder:aDecoder];
+    self = [super initWithCoder:aDecoder];
+    if(self) {
+        UIColor * color = [ColorUtils globalColor];
+        [self setOnTintColor:color];
     }
     return self;
 }
-
-//- (void)setBuildCode:(NSString *)buildCode {
-//    self.buildCode = buildCode;
-//}
-
-//- (NSString *)buildCode {
-//    return self.buildCode;
-//}
 
 @end

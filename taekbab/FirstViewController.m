@@ -7,8 +7,6 @@
 //
 
 #import "FirstViewController.h"
-#import "Agent.h"
-#import "Constant.h"
 
 @interface FirstViewController ()
 
@@ -20,7 +18,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.webView.delegate = self;
     if(self.currentUrl) {
         [self openURL:self.currentUrl];
     } else {
@@ -38,39 +35,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - webview
+
 - (void)setURL:(NSString *)url {
     self.currentUrl = url;
 }
 
 - (void)openURL:(NSString*)url {
-    [self.navigationItem.leftBarButtonItem setTintColor:[UIColor whiteColor]];
-    [self.navigationItem.leftBarButtonItem setEnabled:YES];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
+    if([url rangeOfString:BASE_URL].location == NSNotFound) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    } else {
+        [self.navigationItem.leftBarButtonItem setTintColor:[UIColor whiteColor]];
+        [self.navigationItem.leftBarButtonItem setEnabled:YES];
+        [self.webView loadRequest:[MyRequest requestWithURL:[NSURL URLWithString:url]]];
+    }
 }
 
 - (IBAction)refresh:(id)sender {
     [self.webView reload];
-}
-
--(void)webViewDidStartLoad:(UIWebView*)webView
-{
-    // ProgressBar Setting
-    if(!self.activityIndicator) {
-        self.activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 32, 32)];
-        [self.activityIndicator setCenter:webView.center];
-        [self.activityIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
-        [self.view addSubview : self.activityIndicator];
-    }
-    
-    // ProgressBar Start
-    self.activityIndicator.hidden= NO;
-    [self.activityIndicator startAnimating];
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    [self.activityIndicator stopAnimating];
-    self.activityIndicator.hidden= YES;
 }
 
 - (void) loadHome {
@@ -78,10 +60,7 @@
     [self.navigationItem.leftBarButtonItem setEnabled:NO];
     
     NSString *urlString = [BASE_URL stringByAppendingString:ROOT_PATH];
-    NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-    NSMutableURLRequest *mutableRequest = [req mutableCopy];
-    [mutableRequest addValue:[Agent toString] forHTTPHeaderField:@"X-AGENT"];
-    req = [mutableRequest copy];
+    MyRequest *req = [MyRequest requestWithURL:[NSURL URLWithString:urlString]];
     [self.webView loadRequest:req];
 }
 

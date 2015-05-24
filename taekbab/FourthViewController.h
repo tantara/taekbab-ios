@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h> 
 
-#import "GAITrackedViewController.h"
+#import "CommonViewController.h"
 
-@interface FourthViewController : GAITrackedViewController
+@interface FourthViewController : CommonViewController<UITableViewDelegate, UITableViewDataSource,MFMailComposeViewControllerDelegate>
+
+// for table
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSDictionary *tableData;
+@property (nonatomic, strong) NSArray *tableHeaders;
 
 @end

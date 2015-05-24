@@ -12,14 +12,6 @@
 
 @implementation BuildingConfig
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
 + (id)customView:(CGRect)mainRect {
     BuildingConfig *customView = [[[NSBundle mainBundle] loadNibNamed:@"BuildingConfigView" owner:nil options:nil] lastObject];
     CGRect viewFrame = customView.frame;

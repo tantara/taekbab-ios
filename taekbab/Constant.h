@@ -17,5 +17,8 @@ extern NSString *const ROOT_PATH;
 extern NSString *const API_PATH;
 extern NSString *const TUTORIAL_PATH;
 extern NSString *const REGISTER_DEVICE_PATH;
+extern NSString *const THANKS_PATH;
+extern NSString *const TOGGLE_PUSH_PATH;
+extern NSString *const VERSION_PATH;
 
 #endif

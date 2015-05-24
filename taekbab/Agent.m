@@ -14,7 +14,7 @@
 + (NSString *)toString {
     NSString *agent = @"";
     
-    NSString *appVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+    NSString *appVersion = [self currentAppVersion];
     UIDevice *div = [UIDevice currentDevice];
     NSString *deviceModel = div.model;
     NSString *deviceSystemVersion = div.systemVersion;
@@ -22,6 +22,18 @@
     agent = [NSString stringWithFormat:@"%@ %@, %@", deviceModel, deviceSystemVersion, appVersion];
     
     return agent;
+}
+
++ (NSString *)currentAppVersion {
+    NSString *appVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    
+    return appVersion;
+}
+
++ (NSString *)currentBuildVersion {
+    NSString *buildVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+    
+    return buildVersion;
 }
 
 @end

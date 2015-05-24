@@ -17,3 +17,6 @@ NSString *const ROOT_PATH = @"/";
 NSString *const API_PATH = @"/api";
 NSString *const TUTORIAL_PATH = @"/tutorial";
 NSString *const REGISTER_DEVICE_PATH = @"/api/users/register";
+NSString *const THANKS_PATH = @"/thanks";
+NSString *const TOGGLE_PUSH_PATH = @"/api/users/toggle_push";
+NSString *const VERSION_PATH = @"/version";

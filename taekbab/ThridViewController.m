@@ -7,8 +7,6 @@
 //
 
 #import "ThridViewController.h"
-#import "Agent.h"
-#import "Constant.h"
 
 @interface ThridViewController ()
 
@@ -21,10 +19,7 @@
     // Do any additional setup after loading the view.
     
     NSString *urlString = [NSString stringWithFormat:[BASE_URL stringByAppendingString:TUTORIAL_PATH]];
-    NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-    NSMutableURLRequest *mutableRequest = [req mutableCopy];
-    [mutableRequest addValue:[Agent toString] forHTTPHeaderField:@"X-AGENT"];
-    req = [mutableRequest copy];
+    MyRequest *req = [MyRequest requestWithURL:[NSURL URLWithString:urlString]];
     [self.webView loadRequest:req];
 }
 
@@ -38,14 +33,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+- (void) openMenu:(NSNumber *)menu {
+    [super openMenu:menu];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if([menu intValue] == 0) {
+        [self performSegueWithIdentifier: @"showSetting" sender: self];
+    }
 }
-*/
 
 @end

@@ -8,10 +8,15 @@
 
 #import "AppDelegate.h"
 
-#import "ColorUtils.h"
-
+// lib
 #import "GAI.h"
+#import <Crashlytics/Crashlytics.h>
+
+// custom module
+#import "ColorUtils.h"
 #import "Constant.h"
+#import "MyRequest.h"
+#import "MyCache.h"
 
 @interface AppDelegate ()
 
@@ -39,6 +44,10 @@
     
     // Enable IDFA collection.
     tracker.allowIDFACollection = YES;
+    
+    // crashlystics
+//    [Crashlytics startWithAPIKey:@"3b03d4452837299004825744bd0ab8be86ee9551"];
+    [Crashlytics startWithAPIKey:@"5767904c8cd4f389d89280de3e342eab800cdfa3"];
     
     // Add registration for remote notifications
     if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)])
@@ -118,6 +127,19 @@
         NSInteger index = [[dict objectForKey:@"index"] integerValue];
         UITabBarController *tabBarController = (UITabBarController*)(self.window.rootViewController);
         [tabBarController setSelectedIndex:index];
+    }
+    else if([[url host] isEqualToString:@"openMenu"]) {
+        NSInteger tab = [[dict objectForKey:@"tab"] integerValue];
+        NSNumber *menu = [dict objectForKey:@"menu"];
+        UITabBarController *tabBarController = (UITabBarController*)(self.window.rootViewController);
+        [tabBarController setSelectedIndex:tab];
+        
+        UINavigationController *navController = (UINavigationController*)tabBarController.selectedViewController;
+        UIViewController *mainController = navController.viewControllers.firstObject;
+        
+        if ([mainController respondsToSelector:@selector(openMenu:)]) {
+            [mainController performSelector:@selector(openMenu:) withObject:menu];
+        }
     }
     else if([[url host] isEqualToString:@"openUrl"]) {
         NSString *url = [dict objectForKey:@"url"];
@@ -253,6 +275,8 @@
     
     NSString *devToken = [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<" withString:@""] stringByReplacingOccurrencesOfString:@">" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
     
+    [MyCache save:@"devToken", devToken];
+    
     // Build URL String for Registration
     NSString *urlString = [[BASE_URL stringByAppendingString:REGISTER_DEVICE_PATH] stringByAppendingString:@"?type=device"];
     urlString = [urlString stringByAppendingFormat:@"&appname=%@", appName];
@@ -268,7 +292,7 @@
     
     // Register the Device Data
     NSURL *url = [NSURL URLWithString:urlString];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    MyRequest *request = [MyRequest requestWithURL:url];
     NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     NSLog(@"Register URL: %@", url);
     NSLog(@"Return Data: %@", returnData);

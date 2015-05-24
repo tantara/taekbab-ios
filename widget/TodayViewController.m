@@ -10,11 +10,15 @@
 #import <NotificationCenter/NotificationCenter.h>
 #import <Foundation/NSJSONSerialization.h>
 
+// custom module
 #import "Restaurant.h"
 #import "Menu.h"
+
+// custom module @app
 #import "BuildingConfig.h"
 #import "Agent.h"
 #import "Constant.h"
+#import "MyRequest.h"
 
 typedef void (^MenuInfoCompletion)(BOOL newData, NSDictionary *json, NSError *err);
 
@@ -221,10 +225,7 @@ typedef void (^MenuInfoCompletion)(BOOL newData, NSDictionary *json, NSError *er
 // 밥 api 요청
 - (void) loadData {
     NSURL *url = [NSURL URLWithString:[BASE_URL stringByAppendingString:API_PATH]];
-    NSURLRequest *req = [[NSURLRequest alloc] initWithURL:url];
-    NSMutableURLRequest *mutableRequest = [req mutableCopy];
-    [mutableRequest addValue:[Agent toString] forHTTPHeaderField:@"X-AGENT"];
-    req = [mutableRequest copy];
+    MyRequest *req = [MyRequest requestWithURL:url];
     
     NSOperationQueue *queue = [NSOperationQueue new];
     

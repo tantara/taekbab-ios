@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GAITrackedViewController.h"
 
-@interface ThridViewController : GAITrackedViewController
+#import "CommonViewController.h"
+
+@interface ThridViewController : CommonViewController
+
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end

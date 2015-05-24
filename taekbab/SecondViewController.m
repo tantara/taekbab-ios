@@ -8,11 +8,8 @@
 
 #import "SecondViewController.h"
 
-#import "BuildingConfig.h"
-#import "Agent.h"
-#import "ColorUtils.h"
 #import "MyUISwitch.h"
-#import "Constant.h"
+#import "BuildingConfig.h"
 
 @interface SecondViewController ()
 
@@ -37,62 +34,22 @@
     self.screenName = NSStringFromClass([self class]);
 }
 
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    static NSString *HeaderCellIdentifier = @"Header";
-//    
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HeaderCellIdentifier];
-//    if (cell == nil) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:HeaderCellIdentifier];
-//    }
-//    
-//    NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.me.tantara.taekbab"];
-//    NSDictionary *json = [shared valueForKey:@"json"];
-//    NSArray *sections = [self.dataJson valueForKey:@"sections"];
-//    
-//    NSString *name = [[sections objectAtIndex:section] objectForKey:@"name"];
-////    cell.backgroundColor = [ColorUtils ]
-//    cell.textLabel.text = name;
-//    
-//    return cell;
-//}
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - table
 
 - (UIView *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-//    static NSString *HeaderCellIdentifier = @"Header";
-//    
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HeaderCellIdentifier];
-//    if (cell == nil) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:HeaderCellIdentifier];
-//    }
-//    
     NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.me.tantara.taekbab"];
     NSDictionary *json = [shared valueForKey:@"json"];
     NSArray *sections = [self.dataJson valueForKey:@"sections"];
     
     NSString *name = [[sections objectAtIndex:section] objectForKey:@"name"];
-    //    cell.backgroundColor = [ColorUtils ]
-//    cell.textLabel.text = name;
     
     return name;
 }
-
-//- (UIView *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-//    //    static NSString *HeaderCellIdentifier = @"Header";
-//    //
-//    //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HeaderCellIdentifier];
-//    //    if (cell == nil) {
-//    //        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:HeaderCellIdentifier];
-//    //    }
-//    //
-//    NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.me.tantara.taekbab"];
-//    NSDictionary *json = [shared valueForKey:@"json"];
-//    NSArray *sections = [self.dataJson valueForKey:@"sections"];
-//    
-//    NSString *name = [[sections objectAtIndex:section] objectForKey:@"name"];
-//    //    cell.backgroundColor = [ColorUtils ]
-//    //    cell.textLabel.text = name;
-//    
-//    return name;
-//}
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     NSDictionary *sections = [self.dataJson objectForKey:@"sections"];
@@ -130,7 +87,6 @@
     MyUISwitch *aSwitch = [[MyUISwitch alloc] init];
     [aSwitch addTarget:self action:@selector(switched:) forControlEvents:UIControlEventValueChanged];
     
-//    NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.me.tantara.taekbab"];
     NSString *checked = [shared objectForKey:code];
     BOOL toggle = NO;
     if(checked && [checked isEqualToString:@"true"])
@@ -138,17 +94,19 @@
     else
         toggle = NO;
     
-//    [aSwitch setValue:code forKey:@"code"];
     aSwitch.buildCode = code;
     
     UIColor * color = [ColorUtils globalColor];
     [aSwitch setOnTintColor:color];
     [aSwitch setOn:toggle animated:NO];
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.accessoryView = aSwitch;
     
     return cell;
 }
+
+#pragma mark - view
 
 - (IBAction)switched:(id)sender {
     MyUISwitch *aSwitch = (MyUISwitch*)sender;
@@ -169,42 +127,22 @@
     NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.me.tantara.taekbab"];
     NSDictionary *json = [shared valueForKey:@"json"];
     
-//    for(UIView *view in self.scrollView.subviews) {
-//        if([view isKindOfClass:[BuildingConfig class]]) {
-//            [view removeFromSuperview];
-//        }
-//    }
-    
     if(json) {
         self.dataJson = json;
         [self updateUI:json];
     }
-//    else {
-        NSURL *url = [NSURL URLWithString:[BASE_URL stringByAppendingString:API_PATH]];
-        NSURLRequest *req = [[NSURLRequest alloc] initWithURL:url];
-        NSMutableURLRequest *mutableRequest = [req mutableCopy];
-        [mutableRequest addValue:[Agent toString] forHTTPHeaderField:@"X-AGENT"];
-        req = [mutableRequest copy];
-//        NSOperationQueue *queue = [NSOperationQueue new];
     
-        //    [self.aiLoading startAnimating];
-        NSURLResponse *res = nil;
-        NSData *data = [NSURLConnection sendSynchronousRequest:req returningResponse:&res error:nil];
-        
-        NSDictionary *dataJson = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-        
-//        NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.me.tantara.taekbab"];
-        [shared setObject:dataJson forKey:@"json"];
-        [shared synchronize];
-        
-        self.dataJson = dataJson;
-        [self updateUI:dataJson];
-//    }
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSURL *url = [NSURL URLWithString:[BASE_URL stringByAppendingString:API_PATH]];
+    MyRequest *req = [MyRequest requestWithURL:url];
+    NSData *data = [NSURLConnection sendSynchronousRequest:req returningResponse:nil error:nil];
+    
+    NSDictionary *dataJson = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    
+    [shared setObject:dataJson forKey:@"json"];
+    [shared synchronize];
+    
+    self.dataJson = dataJson;
+    [self updateUI:dataJson];
 }
 
 - (void) updateUI:(NSDictionary*) json {
@@ -230,11 +168,7 @@
         frame.origin.y = height;
         height += frame.size.height;
         customView.frame = frame;
-        
-//        [self.scrollView addSubview:customView];
     }
-    
-//    [self.scrollView setContentSize:CGSizeMake(mainRect.size.width, height)];
     
     NSLog(@"%@", json);
 }
@@ -242,5 +176,6 @@
 - (IBAction)refresh:(id)sender {
     [self loadData];
 }
+
 @end
 

@@ -7,21 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GAITrackedViewController.h"
 
-@interface FirstViewController : GAITrackedViewController<UIWebViewDelegate> {
+#import "CommonViewController.h"
+
+@interface FirstViewController : CommonViewController {
     
 }
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *leftItem;
-@property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
-@property (nonatomic, retain) NSString *currentUrl;
 
-- (void)openURL:(NSString*)url;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *leftItem;
+
+@property (nonatomic, retain) NSString *currentUrl;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+
 - (void)setURL:(NSString*)url;
+- (void)openURL:(NSString*)url;
 - (IBAction)refresh:(id)sender;
+- (void)loadHome;
 - (IBAction)goHome:(id)sender;
 
-
 @end
-
