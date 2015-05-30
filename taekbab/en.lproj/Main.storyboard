@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--식단-->
+        <!--Home-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" sceneMemberID="viewController">
@@ -31,8 +31,8 @@
                             <constraint firstAttribute="width" secondItem="eOi-SQ-Zqa" secondAttribute="width" id="zWe-44-kC4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="식단" image="first" id="rqA-Fk-hRk"/>
-                    <navigationItem key="navigationItem" title="식단" id="dxu-TH-zaM">
+                    <tabBarItem key="tabBarItem" title="Home" image="first" id="rqA-Fk-hRk"/>
+                    <navigationItem key="navigationItem" title="Home" id="dxu-TH-zaM">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="MGN-1r-LkJ">
                             <connections>
                                 <action selector="goHome:" destination="9pv-A4-QxB" id="fZ3-qg-i7l"/>
@@ -54,11 +54,11 @@
             </objects>
             <point key="canvasLocation" x="1527" y="-636"/>
         </scene>
-        <!--식단-->
+        <!--Home-->
         <scene sceneID="ePp-od-rIU">
             <objects>
                 <navigationController id="J9M-i2-xyb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="식단" image="home" id="dn2-41-dIk"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="dn2-41-dIk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vwp-eI-bID">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -71,7 +71,7 @@
             </objects>
             <point key="canvasLocation" x="814" y="-388"/>
         </scene>
-        <!--식당-->
+        <!--Restaurant-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" sceneMemberID="viewController">
@@ -98,8 +98,8 @@
                             <constraint firstItem="YB4-Mg-xJM" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" id="cLA-ro-419"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="식당" image="first" id="MT9-Jx-Fqi"/>
-                    <navigationItem key="navigationItem" title="식당" id="jla-jF-Zcm">
+                    <tabBarItem key="tabBarItem" title="Restaurant" image="first" id="MT9-Jx-Fqi"/>
+                    <navigationItem key="navigationItem" title="Restaurant" id="jla-jF-Zcm">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="refresh" id="RNB-Rz-6th">
                             <connections>
                                 <action selector="refresh:" destination="8rJ-Kc-sve" id="VXA-aI-fQ6"/>
@@ -114,11 +114,11 @@
             </objects>
             <point key="canvasLocation" x="886" y="394"/>
         </scene>
-        <!--더 보기-->
+        <!--More-->
         <scene sceneID="2zx-WQ-MFC">
             <objects>
                 <navigationController id="uLA-3i-EgW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="더 보기" image="settings" id="z74-dk-Qqi"/>
+                    <tabBarItem key="tabBarItem" title="More" image="settings" id="z74-dk-Qqi"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RzV-Oe-e9K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -131,7 +131,7 @@
             </objects>
             <point key="canvasLocation" x="492" y="1160"/>
         </scene>
-        <!--더 보기-->
+        <!--More-->
         <scene sceneID="co4-1c-TEC">
             <objects>
                 <viewController id="fSm-Tn-8BQ" customClass="ThridViewController" sceneMemberID="viewController">
@@ -157,9 +157,9 @@
                             <constraint firstItem="s47-D2-O3m" firstAttribute="width" secondItem="ESh-1Q-ysj" secondAttribute="width" id="wQi-kG-3bo"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="더 보기" image="first" id="4JL-9o-gf2"/>
-                    <navigationItem key="navigationItem" title="더 보기" id="frq-V5-hL3">
-                        <barButtonItem key="rightBarButtonItem" title="설정" style="plain" id="Zwm-wK-HaM">
+                    <tabBarItem key="tabBarItem" title="More" image="first" id="4JL-9o-gf2"/>
+                    <navigationItem key="navigationItem" title="More" id="frq-V5-hL3">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" style="plain" id="Zwm-wK-HaM">
                             <connections>
                                 <segue destination="QAI-SS-6Cb" kind="show" identifier="showSetting" id="X1V-JJ-YhN"/>
                             </connections>
@@ -173,7 +173,7 @@
             </objects>
             <point key="canvasLocation" x="1367" y="1131"/>
         </scene>
-        <!--설정-->
+        <!--Settings-->
         <scene sceneID="v4T-14-aV8">
             <objects>
                 <viewController id="QAI-SS-6Cb" customClass="FourthViewController" sceneMemberID="viewController">
@@ -200,17 +200,17 @@
                             <constraint firstItem="dUq-cM-Xqb" firstAttribute="width" secondItem="mR6-hf-tgR" secondAttribute="width" id="q3k-K8-a11"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="설정" id="WRk-gK-61k"/>
+                    <navigationItem key="navigationItem" title="Settings" id="WRk-gK-61k"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HcV-EW-fLo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2056" y="1126"/>
         </scene>
-        <!--식당-->
+        <!--Restaurant-->
         <scene sceneID="XSh-kc-sqh">
             <objects>
                 <navigationController id="EXz-cm-u79" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="식당" image="star" id="0pa-Cb-vSD"/>
+                    <tabBarItem key="tabBarItem" title="Restaurant" image="star" id="0pa-Cb-vSD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="a1P-vn-dfF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

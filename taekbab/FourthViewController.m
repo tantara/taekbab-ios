@@ -27,41 +27,41 @@
     }
     NSString *version = [Agent currentAppVersion];
     
-    self.tableHeaders = @[@"알림", @"버그 및 제안", @"기타", @""];
+    self.tableHeaders = @[NSLocalizedString(@"알림", @""), NSLocalizedString(@"버그 및 제안", @""), NSLocalizedString(@"기타", @""), @""];
     self.tableData = @{
-                       @"알림": @{
-                               @"푸시 알림": @{
+                       NSLocalizedString(@"알림", @""): @{
+                               NSLocalizedString(@"푸시 알림", @""): @{
                                        @"type": @"switch",
                                        @"value": pushOn,
                                        @"function": @"togglePush:"
                                        }
                                },
-                       @"버그 및 제안": @{
-                               @"메일로": @{
+                       NSLocalizedString(@"버그 및 제안", @""): @{
+                               NSLocalizedString(@"메일로", @""): @{
                                        @"type": @"arrow",
                                        @"value": @"",
                                        @"function": @"sendMail"
                                        },
-                               @"페이스북으로": @{
+                               NSLocalizedString(@"페이스북으로", @""): @{
                                        @"type": @"arrow",
                                        @"value": @"@taekmin.kim",
                                        @"function": @"openFacebook"
                                        }
                                },
-                       @"기타": @{
-                               @"버전 정보": @{
+                       NSLocalizedString(@"기타", @""): @{
+                               NSLocalizedString(@"버전 정보", @""): @{
                                        @"type": @"arrow",
                                        @"value": version,
                                        @"function": @"showVersion"
                                        },
-                               @"개발자": @{
+                               NSLocalizedString(@"개발자", @""): @{
                                        @"type": @"text",
                                        @"value": @"tantara",
                                        @"function": @"openFacebook"
                                        },
                                },
                        @"": @{
-                               @"도와준 사람들": @{
+                               NSLocalizedString(@"도와준 사람들", @""): @{
                                        @"type": @"arrow",
                                        @"value": @"",
                                        @"function": @"openThanksTo"
@@ -207,9 +207,9 @@
 }
 
 - (void) sendMail {
-    NSString *emailTitle = @"[택밥] 버그 및 제안";
+    NSString *emailTitle = NSLocalizedString(@"[택밥] 버그 및 제안", @"");
     // Email Content
-    NSString *messageBody = @"택밥과 관련된 버그 혹은 기능 제안을 해주세요.\n\n이외에도 학교와 관련된 아이디어가 있으면 같이 해봐도 좋을 거 같아요!!\n\n\n\n*확인 후 메일을 꼭 드리겠습니다.";
+    NSString *messageBody = NSLocalizedString(@"택밥과 관련된 버그 혹은 기능 제안을 해주세요.\n\n이외에도 학교와 관련된 아이디어가 있으면 같이 해봐도 좋을 거 같아요!!\n\n\n\n*확인 후 메일을 꼭 드리겠습니다.", @"");
     // To address
     NSArray *toRecipents = [NSArray arrayWithObject:@"tantara.tm@gmail.com"];
     

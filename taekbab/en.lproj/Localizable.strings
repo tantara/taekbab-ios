@@ -1,0 +1,46 @@
+/* 
+  Localizable.strings
+  taekbab
+
+  Created by Taekmin Kim on 2015. 5. 29..
+  Copyright (c) 2015년 Taekmin Kim. All rights reserved.
+*/
+
+//"CFBundleDisplayName" = "TAEKBAB";
+//"CFBundleName" = "TAEKBAB";
+
+"초기화중..." = "Initializing...";
+"로딩중..." = "Loading...";
+"마지막 업데이트 %02ld:%02ld:%02ld" = "Last updated at %02ld:%02ld:%02ld";
+"%@월 %@일" = "%@/%@";
+"%@원" = "%@Won";
+"새로고침" = "Refresh";
+
+"안내" = "Notice";
+"확인" = "Ok";
+
+"알림" = "Notifications";
+"버그 및 제안" = "Report";
+"기타" = "Etc";
+
+"푸시 알림" = "Push Notification";
+"메일로" = "e-mail";
+"페이스북으로" = "Facebook";
+
+"버전 정보" = "Version";
+"개발자" = "Developer";
+
+"도와준 사람들" = "Supporters";
+
+"[택밥] 버그 및 제안" = "[TAEKBAB] Report";
+"택밥과 관련된 버그 혹은 기능 제안을 해주세요.\n\n이외에도 학교와 관련된 아이디어가 있으면 같이 해봐도 좋을 거 같아요!!\n\n\n\n*확인 후 메일을 꼭 드리겠습니다." = "*I will check email as soon as possible, then reply!";
+
+/* widget */
+"초기 환경설정이 필요합니다. (클릭)" = "Need to initialize. (Click)";
+"오늘의 식단" = "Today's Menu";
+"보여줄 메뉴가 없어요 ㅜ" = "No menu :(";
+"아침" = "Breakfast";
+"점심" = "Lunch";
+"저녁" = "Dinner";
+"마지막 업데이트 00:00:00" = "Last updated at 00:00:00";
+"새로고침" = "Refresh";

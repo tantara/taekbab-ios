@@ -10,18 +10,10 @@
 
 @implementation Restaurant
 
-/*
- // Only override drawRect: if you perform custom drawing.
- // An empty implementation adversely affects performance during animation.
- - (void)drawRect:(CGRect)rect {
- // Drawing code
- }
- */
-
 + (id)customView:(CGRect)mainRect {
     Restaurant *customView = [[[NSBundle mainBundle] loadNibNamed:@"RestaurantView" owner:nil options:nil] lastObject];
     CGRect viewFrame = customView.frame;
-    CGFloat scale = [UIScreen mainScreen].scale;
+//    CGFloat scale = [UIScreen mainScreen].scale;
     viewFrame.size.width = mainRect.size.width;
     customView.frame = viewFrame;
     

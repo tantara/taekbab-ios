@@ -21,7 +21,7 @@
 + (id)customView:(CGRect)mainRect {
     Menu *customView = [[[NSBundle mainBundle] loadNibNamed:@"MenuView" owner:nil options:nil] lastObject];
     CGRect viewFrame = customView.frame;
-    CGFloat scale = [UIScreen mainScreen].scale;
+//    CGFloat scale = [UIScreen mainScreen].scale;
     viewFrame.size.width = mainRect.size.width;
     
     customView.frame = viewFrame;
@@ -39,7 +39,7 @@
 }
 
 - (void)setPrice:(NSString*)price {
-    self.priceLabel.text =[NSString stringWithFormat:@"%@원", price];
+    self.priceLabel.text =[NSString stringWithFormat:NSLocalizedString(@"%@원", @""), price];
 }
 
 @end

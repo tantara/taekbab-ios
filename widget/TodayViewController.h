@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TodayViewController : UIViewController<NSURLSessionDelegate> {
+#import "GAITrackedViewController.h"
+
+@interface TodayViewController : GAITrackedViewController<NSURLSessionDelegate> {
     
 }
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;

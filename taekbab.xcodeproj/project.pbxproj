@@ -17,7 +17,6 @@
 		8C0B20541AD3C8E6002B97EB /* taekbabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0B20531AD3C8E6002B97EB /* taekbabTests.m */; };
 		8C0B20641AD3C913002B97EB /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0B20631AD3C913002B97EB /* NotificationCenter.framework */; };
 		8C0B206A1AD3C913002B97EB /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0B20691AD3C913002B97EB /* TodayViewController.m */; };
-		8C0B206C1AD3C913002B97EB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0B206B1AD3C913002B97EB /* MainInterface.storyboard */; };
 		8C0B206F1AD3C913002B97EB /* widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8C0B20611AD3C913002B97EB /* widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8C1F6F141AE9E13300B3B853 /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F6F131AE9E13300B3B853 /* ColorUtils.m */; };
 		8C1F6F151AE9E22500B3B853 /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F6F131AE9E13300B3B853 /* ColorUtils.m */; };
@@ -36,6 +35,16 @@
 		8C67BA041B09C7E0007DE87C /* Agent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C67BA021B09C7E0007DE87C /* Agent.m */; };
 		8C67BA071B0ACAD5007DE87C /* MyUISwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C67BA061B0ACAD5007DE87C /* MyUISwitch.m */; };
 		8C67BA081B0ACAD5007DE87C /* MyUISwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C67BA061B0ACAD5007DE87C /* MyUISwitch.m */; };
+		8C787CE11B1564FC00609F02 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C67B9F91B09C0E3007DE87C /* libGoogleAnalyticsServices.a */; };
+		8C787CE21B1564FF00609F02 /* libAdIdAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C67B9FB1B09C24B007DE87C /* libAdIdAccess.a */; };
+		8C787CE31B15650D00609F02 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C67B9E91B09C045007DE87C /* libz.dylib */; };
+		8C787CE41B15651100609F02 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C67B9EB1B09C04E007DE87C /* libsqlite3.dylib */; };
+		8C787CE51B15651500609F02 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C67B9FD1B09C256007DE87C /* AdSupport.framework */; };
+		8C787CE61B15651800609F02 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C67B9FF1B09C275007DE87C /* iAd.framework */; };
+		8C787CE71B15651B00609F02 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C67B9E71B09C039007DE87C /* SystemConfiguration.framework */; };
+		8C787CE81B15651E00609F02 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C67B9E51B09C02A007DE87C /* CoreData.framework */; };
+		8C787CE91B15665500609F02 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBB55561B11FC9F004280FE /* Crashlytics.framework */; };
+		8C787CEB1B1567C900609F02 /* MyCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBB55531B11E87A004280FE /* MyCache.m */; };
 		8C885AF11AE644F10075B3A2 /* BuildingConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C885AF01AE644F10075B3A2 /* BuildingConfig.m */; };
 		8C885AF31AE644FF0075B3A2 /* BuildingConfigView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C885AF21AE644FF0075B3A2 /* BuildingConfigView.xib */; };
 		8C885AF61AE654DF0075B3A2 /* ThridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C885AF51AE654DF0075B3A2 /* ThridViewController.m */; };
@@ -52,6 +61,11 @@
 		8CBB554E1B118C34004280FE /* MyWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CBB554C1B118C34004280FE /* MyWebViewController.xib */; };
 		8CBB55541B11E87A004280FE /* MyCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBB55531B11E87A004280FE /* MyCache.m */; };
 		8CBB55571B11FC9F004280FE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBB55561B11FC9F004280FE /* Crashlytics.framework */; };
+		8CF03AF41B1851E20016A910 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CF03AF61B1851E20016A910 /* Localizable.strings */; };
+		8CF03AFA1B1857BF0016A910 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF03AFC1B1857BF0016A910 /* MainInterface.storyboard */; };
+		8CF03AFF1B185CD90016A910 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CF03AF61B1851E20016A910 /* Localizable.strings */; };
+		8CF03B2E1B1868DF0016A910 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CF03B2D1B1868DF0016A910 /* Info.plist */; };
+		8CF03B301B1868EA0016A910 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CF03B2F1B1868EA0016A910 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +101,6 @@
 
 /* Begin PBXFileReference section */
 		8C0B20311AD3C8E6002B97EB /* taekbab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taekbab.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C0B20351AD3C8E6002B97EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C0B20361AD3C8E6002B97EB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8C0B20381AD3C8E6002B97EB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8C0B20391AD3C8E6002B97EB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -97,16 +110,13 @@
 		8C0B203F1AD3C8E6002B97EB /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		8C0B20421AD3C8E6002B97EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C0B20441AD3C8E6002B97EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		8C0B20471AD3C8E6002B97EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8C0B204D1AD3C8E6002B97EB /* taekbabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = taekbabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0B20521AD3C8E6002B97EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C0B20531AD3C8E6002B97EB /* taekbabTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = taekbabTests.m; sourceTree = "<group>"; };
 		8C0B20611AD3C913002B97EB /* widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0B20631AD3C913002B97EB /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		8C0B20671AD3C913002B97EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C0B20681AD3C913002B97EB /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
 		8C0B20691AD3C913002B97EB /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
-		8C0B206B1AD3C913002B97EB /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		8C1E6C5F1AE4DECE008B92EB /* widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = widget.entitlements; sourceTree = "<group>"; };
 		8C1E6C601AE4DFA4008B92EB /* taekbab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = taekbab.entitlements; sourceTree = "<group>"; };
 		8C1F6F121AE9E13300B3B853 /* ColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtils.h; sourceTree = "<group>"; };
@@ -158,6 +168,13 @@
 		8CBB55521B11E87A004280FE /* MyCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCache.h; sourceTree = "<group>"; };
 		8CBB55531B11E87A004280FE /* MyCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCache.m; sourceTree = "<group>"; };
 		8CBB55561B11FC9F004280FE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		8CF03AF51B1851E20016A910 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8CF03AF91B1857500016A910 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		8CF03AFB1B1857BF0016A910 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		8CF03B011B185F850016A910 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		8CF03B021B185F960016A910 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8CF03B2D1B1868DF0016A910 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CF03B2F1B1868EA0016A910 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +206,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C0B20641AD3C913002B97EB /* NotificationCenter.framework in Frameworks */,
+				8C787CE81B15651E00609F02 /* CoreData.framework in Frameworks */,
+				8C787CE31B15650D00609F02 /* libz.dylib in Frameworks */,
+				8C787CE21B1564FF00609F02 /* libAdIdAccess.a in Frameworks */,
+				8C787CE61B15651800609F02 /* iAd.framework in Frameworks */,
+				8C787CE41B15651100609F02 /* libsqlite3.dylib in Frameworks */,
+				8C787CE91B15665500609F02 /* Crashlytics.framework in Frameworks */,
+				8C787CE11B1564FC00609F02 /* libGoogleAnalyticsServices.a in Frameworks */,
+				8C787CE71B15651B00609F02 /* SystemConfiguration.framework in Frameworks */,
+				8C787CE51B15651500609F02 /* AdSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,8 +270,9 @@
 		8C0B20341AD3C8E6002B97EB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8C0B20351AD3C8E6002B97EB /* Info.plist */,
 				8C0B20361AD3C8E6002B97EB /* main.m */,
+				8CF03B2D1B1868DF0016A910 /* Info.plist */,
+				8CF03AF61B1851E20016A910 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -289,7 +316,7 @@
 				8C1E6C5F1AE4DECE008B92EB /* widget.entitlements */,
 				8C0B20681AD3C913002B97EB /* TodayViewController.h */,
 				8C0B20691AD3C913002B97EB /* TodayViewController.m */,
-				8C0B206B1AD3C913002B97EB /* MainInterface.storyboard */,
+				8CF03AFC1B1857BF0016A910 /* MainInterface.storyboard */,
 				8CA457F31AD4B884007AADF6 /* RestaurantView.xib */,
 				8CA457F71AD4B8D3007AADF6 /* Restaurant.h */,
 				8CA457F81AD4B8D3007AADF6 /* Restaurant.m */,
@@ -304,7 +331,7 @@
 		8C0B20661AD3C913002B97EB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8C0B20671AD3C913002B97EB /* Info.plist */,
+				8CF03B2F1B1868EA0016A910 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -417,6 +444,7 @@
 				8C0B205D1AD3C913002B97EB /* Sources */,
 				8C0B205E1AD3C913002B97EB /* Frameworks */,
 				8C0B205F1AD3C913002B97EB /* Resources */,
+				8C787CEA1B15666200609F02 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -487,10 +515,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CBB554E1B118C34004280FE /* MyWebViewController.xib in Resources */,
+				8CF03AF41B1851E20016A910 /* Localizable.strings in Resources */,
 				8C0B20431AD3C8E6002B97EB /* Main.storyboard in Resources */,
 				8C0B20481AD3C8E6002B97EB /* LaunchScreen.xib in Resources */,
 				8C885AF31AE644FF0075B3A2 /* BuildingConfigView.xib in Resources */,
 				8C0B20451AD3C8E6002B97EB /* Images.xcassets in Resources */,
+				8CF03B2E1B1868DF0016A910 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,7 +535,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C0B206C1AD3C913002B97EB /* MainInterface.storyboard in Resources */,
+				8CF03AFF1B185CD90016A910 /* Localizable.strings in Resources */,
+				8CF03AFA1B1857BF0016A910 /* MainInterface.storyboard in Resources */,
+				8CF03B301B1868EA0016A910 /* Info.plist in Resources */,
 				8CA457FD1AD4C9B3007AADF6 /* Images.xcassets in Resources */,
 				8CA457F61AD4B88A007AADF6 /* MenuView.xib in Resources */,
 				8CA457F41AD4B884007AADF6 /* RestaurantView.xib in Resources */,
@@ -515,6 +547,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8C787CEA1B15666200609F02 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 5767904c8cd4f389d89280de3e342eab800cdfa3 520c95a620ff194934a14468ac6a85aa1afccda2069a1077a2eee30f5d20a3ab";
+		};
 		8CBB55551B11FC52004280FE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -571,6 +616,7 @@
 				8CBB55491B117839004280FE /* MyRequest.m in Sources */,
 				8C67BA041B09C7E0007DE87C /* Agent.m in Sources */,
 				8CA457FC1AD4B8DC007AADF6 /* Menu.m in Sources */,
+				8C787CEB1B1567C900609F02 /* MyCache.m in Sources */,
 				8C67BA081B0ACAD5007DE87C /* MyUISwitch.m in Sources */,
 				8C885AF71AE657820075B3A2 /* BuildingConfig.m in Sources */,
 				8C2F93E41B0D840000E13598 /* Constant.m in Sources */,
@@ -597,6 +643,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8C0B20421AD3C8E6002B97EB /* Base */,
+				8CF03B021B185F960016A910 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -604,9 +651,26 @@
 		8C0B20461AD3C8E6002B97EB /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8C0B20471AD3C8E6002B97EB /* Base */,
+				8CF03AF91B1857500016A910 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		8CF03AF61B1851E20016A910 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CF03AF51B1851E20016A910 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		8CF03AFC1B1857BF0016A910 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CF03AFB1B1857BF0016A910 /* Base */,
+				8CF03B011B185F850016A910 /* en */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -791,6 +855,10 @@
 				CODE_SIGN_ENTITLEMENTS = widget/widget.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -798,6 +866,10 @@
 				INFOPLIST_FILE = widget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -812,9 +884,17 @@
 				CODE_SIGN_ENTITLEMENTS = widget/widget.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = widget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;

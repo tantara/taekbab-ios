@@ -42,8 +42,8 @@
 #pragma mark - table
 
 - (UIView *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.me.tantara.taekbab"];
-    NSDictionary *json = [shared valueForKey:@"json"];
+//    NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.me.tantara.taekbab"];
+//    NSDictionary *json = [shared valueForKey:@"json"];
     NSArray *sections = [self.dataJson valueForKey:@"sections"];
     
     NSString *name = [[sections objectAtIndex:section] objectForKey:@"name"];
@@ -59,7 +59,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSDictionary *build = [self.dataJson objectForKey:@"buildings"];
+//    NSDictionary *build = [self.dataJson objectForKey:@"buildings"];
     NSArray *sections = [self.dataJson objectForKey:@"sections"];
     NSDictionary *buildings = [[sections objectAtIndex:section] objectForKey:@"buildings"];
     return [buildings count];
@@ -76,7 +76,7 @@
     }
     
     NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.me.tantara.taekbab"];
-    NSDictionary *json = [shared valueForKey:@"json"];
+//    NSDictionary *json = [shared valueForKey:@"json"];
     NSArray *sections = [self.dataJson valueForKey:@"sections"];
     NSArray *buildings = [[sections objectAtIndex:indexPath.section] objectForKey:@"buildings"];
     

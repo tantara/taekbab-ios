@@ -10,6 +10,10 @@
 #import <NotificationCenter/NotificationCenter.h>
 #import <Foundation/NSJSONSerialization.h>
 
+//lib
+#import "GAI.h"
+#import <Crashlytics/Crashlytics.h>
+
 // custom module
 #import "Restaurant.h"
 #import "Menu.h"
@@ -37,11 +41,30 @@ typedef void (^MenuInfoCompletion)(BOOL newData, NSDictionary *json, NSError *er
 //for iPad:
 //
 //float maxHeight = [[ UIScreen mainScreen ] bounds ].size.height - 171;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     NSLog(@"view did load");
+    
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 20;
+    
+    // Optional: set Logger to VERBOSE for debug information.
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    
+    // Initialize tracker. Replace with your tracking ID.
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-63076590-1"];
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    // Enable IDFA collection.
+    tracker.allowIDFACollection = YES;
+    
+    // crashlystics
+    [Crashlytics startWithAPIKey:@"5767904c8cd4f389d89280de3e342eab800cdfa3"];
     
 //    CGRect frame = self.view.frame;
 //    frame.size.height = 120;
@@ -66,6 +89,13 @@ typedef void (^MenuInfoCompletion)(BOOL newData, NSDictionary *json, NSError *er
     [self showTitleLabel:[self oldJson]];
     [self changeSegment];
     [self loadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    // GA configuration
+    self.screenName = NSStringFromClass([self class]);
 }
 
 - (void) viewDidLayoutSubviews {
@@ -152,7 +182,7 @@ typedef void (^MenuInfoCompletion)(BOOL newData, NSDictionary *json, NSError *er
     
     if(!json) {
         if(![self oldJson]) {
-            self.dateLabel.text = @"초기화중...";
+            self.dateLabel.text = NSLocalizedString(@"초기화중...", @"");
             [self loadData];
         }
         return;
@@ -323,7 +353,7 @@ typedef void (^MenuInfoCompletion)(BOOL newData, NSDictionary *json, NSError *er
                 }
                 foundMenu = YES;
                 
-                NSString *restaurantName = [restaurant objectForKey:@"name"];
+//                NSString *restaurantName = [restaurant objectForKey:@"name"];
                 Restaurant *restaurantView = [Restaurant customView:mainRect];
                 [restaurantView setName:[NSString stringWithFormat:@"%@", buildingNum]];
                 
@@ -386,7 +416,7 @@ typedef void (^MenuInfoCompletion)(BOOL newData, NSDictionary *json, NSError *er
 
 - (void) updateUI:(NSDictionary *)data {
     if(!data) {
-        self.dateLabel.text = @"로딩중...";
+        self.dateLabel.text = NSLocalizedString(@"로딩중...", @"");
         return;
     }
     
@@ -395,7 +425,7 @@ typedef void (^MenuInfoCompletion)(BOOL newData, NSDictionary *json, NSError *er
     
     NSDictionary *currentDate = [data objectForKey:@"current_date"];
     
-    NSString *today = [NSString stringWithFormat:@"%@월 %@일", [currentDate objectForKey:@"month"], [currentDate objectForKey:@"day"]];
+    NSString *today = [NSString stringWithFormat:NSLocalizedString(@"%@월 %@일", @""), [currentDate objectForKey:@"month"], [currentDate objectForKey:@"day"]];
     NSLog(@"date %@", today);
     self.dateLabel.text = today;
     
@@ -406,7 +436,7 @@ typedef void (^MenuInfoCompletion)(BOOL newData, NSDictionary *json, NSError *er
     NSInteger minute = [components minute];
     NSInteger second = [components second];
     
-    NSString *updateTime = [NSString stringWithFormat:@"마지막 업데이트 %02ld:%02ld:%02ld", hour, minute, second];
+    NSString *updateTime = [NSString stringWithFormat:NSLocalizedString(@"마지막 업데이트 %02ld:%02ld:%02ld", @""), hour, minute, second];
     self.updateLabel.text = updateTime;
     
     [self updateMenu:data];
@@ -446,8 +476,8 @@ typedef void (^MenuInfoCompletion)(BOOL newData, NSDictionary *json, NSError *er
     
     NSLog(@"%@", self.dateLabel.text);
     //    if( ! [self.dateLabel.text isEqualToString:@"로딩중..."]) {
-    self.dateLabel.text = @"로딩중...";
-    self.updateLabel.text = @"로딩중...";
+    self.dateLabel.text = NSLocalizedString(@"로딩중...", @"");
+    self.updateLabel.text = NSLocalizedString(@"로딩중...", @"");
     [self changeSegment];
     [self loadData];
     //    }

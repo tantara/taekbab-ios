@@ -1,4 +1,4 @@
-//
+
 //  AppDelegate.m
 //  taekbab
 //
@@ -46,7 +46,6 @@
     tracker.allowIDFACollection = YES;
     
     // crashlystics
-//    [Crashlytics startWithAPIKey:@"3b03d4452837299004825744bd0ab8be86ee9551"];
     [Crashlytics startWithAPIKey:@"5767904c8cd4f389d89280de3e342eab800cdfa3"];
     
     // Add registration for remote notifications
@@ -79,6 +78,8 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 //    [[UINavigationBar appearance] setBackgroundColor:[UIColor purpleColor]];
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     
     return YES;
 }
@@ -193,7 +194,7 @@
     NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
     
     if (application.applicationState == UIApplicationStateActive) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"알림", nil)
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"안내", nil)
                                                             message:[apsInfo objectForKey:@"alert"]
                                                            delegate:self
                                                   cancelButtonTitle:NSLocalizedString(@"확인", nil)
@@ -275,7 +276,7 @@
     
     NSString *devToken = [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<" withString:@""] stringByReplacingOccurrencesOfString:@">" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
     
-    [MyCache save:@"devToken", devToken];
+    [MyCache save:@"devToken" withData:devToken];
     
     // Build URL String for Registration
     NSString *urlString = [[BASE_URL stringByAppendingString:REGISTER_DEVICE_PATH] stringByAppendingString:@"?type=device"];
