@@ -121,6 +121,9 @@
 		8C1E6C601AE4DFA4008B92EB /* taekbab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = taekbab.entitlements; sourceTree = "<group>"; };
 		8C1F6F121AE9E13300B3B853 /* ColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtils.h; sourceTree = "<group>"; };
 		8C1F6F131AE9E13300B3B853 /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtils.m; sourceTree = "<group>"; };
+		8C2A8A6A1B25BE0900A146BA /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		8C2A8A6B1B25BE0900A146BA /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/MainInterface.strings; sourceTree = "<group>"; };
+		8C2A8A6C1B25BE0900A146BA /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8C2F93DC1B0AF98C00E13598 /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
 		8C2F93DD1B0AF98C00E13598 /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
 		8C2F93E11B0D7FE100E13598 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
@@ -496,6 +499,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 8C0B20281AD3C8E6002B97EB;
 			productRefGroup = 8C0B20321AD3C8E6002B97EB /* Products */;
@@ -644,6 +648,7 @@
 			children = (
 				8C0B20421AD3C8E6002B97EB /* Base */,
 				8CF03B021B185F960016A910 /* en */,
+				8C2A8A6A1B25BE0900A146BA /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -660,6 +665,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8CF03AF51B1851E20016A910 /* en */,
+				8C2A8A6C1B25BE0900A146BA /* ko */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -669,6 +675,7 @@
 			children = (
 				8CF03AFB1B1857BF0016A910 /* Base */,
 				8CF03B011B185F850016A910 /* en */,
+				8C2A8A6B1B25BE0900A146BA /* ko */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -776,7 +783,7 @@
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "785ff481-3301-4ae8-9749-68bb73eb654f";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -787,8 +794,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_ENTITLEMENTS = taekbab/taekbab.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Taekmin Kim (4SPG65J6DH)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Taekmin Kim (4SPG65J6DH)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -802,7 +809,7 @@
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "785ff481-3301-4ae8-9749-68bb73eb654f";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -882,7 +889,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = widget/widget.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

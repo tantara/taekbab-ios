@@ -219,8 +219,10 @@
     [mc setMessageBody:messageBody isHTML:NO];
     [mc setToRecipients:toRecipents];
     
-    // Present mail view controller on screen
-    [self presentViewController:mc animated:YES completion:NULL];
+    if([MFMailComposeViewController canSendMail]) {
+        // Present mail view controller on screen
+        [self presentViewController:mc animated:YES completion:NULL];
+    }
 }
 
 - (void) showVersion {

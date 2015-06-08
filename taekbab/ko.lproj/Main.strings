@@ -1,0 +1,33 @@
+
+/* Class = "UITabBarItem"; title = "식당"; ObjectID = "0pa-Cb-vSD"; */
+"0pa-Cb-vSD.title" = "식당";
+
+/* Class = "UITabBarItem"; title = "더 보기"; ObjectID = "4JL-9o-gf2"; */
+"4JL-9o-gf2.title" = "더 보기";
+
+/* Class = "UITabBarItem"; title = "식당"; ObjectID = "MT9-Jx-Fqi"; */
+"MT9-Jx-Fqi.title" = "식당";
+
+/* Class = "UINavigationItem"; title = "설정"; ObjectID = "WRk-gK-61k"; */
+"WRk-gK-61k.title" = "설정";
+
+/* Class = "UIBarButtonItem"; title = "설정"; ObjectID = "Zwm-wK-HaM"; */
+"Zwm-wK-HaM.title" = "설정";
+
+/* Class = "UITabBarItem"; title = "식단"; ObjectID = "dn2-41-dIk"; */
+"dn2-41-dIk.title" = "식단";
+
+/* Class = "UINavigationItem"; title = "식단"; ObjectID = "dxu-TH-zaM"; */
+"dxu-TH-zaM.title" = "식단";
+
+/* Class = "UINavigationItem"; title = "더 보기"; ObjectID = "frq-V5-hL3"; */
+"frq-V5-hL3.title" = "더 보기";
+
+/* Class = "UINavigationItem"; title = "식당"; ObjectID = "jla-jF-Zcm"; */
+"jla-jF-Zcm.title" = "식당";
+
+/* Class = "UITabBarItem"; title = "식단"; ObjectID = "rqA-Fk-hRk"; */
+"rqA-Fk-hRk.title" = "식단";
+
+/* Class = "UITabBarItem"; title = "더 보기"; ObjectID = "z74-dk-Qqi"; */
+"z74-dk-Qqi.title" = "더 보기";

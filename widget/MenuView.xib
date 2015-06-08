@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,27 +10,38 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="17"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="3000원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qth-OA-Hc7">
-                    <rect key="frame" x="252" y="-1" width="60" height="20"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="어머니의 된장국" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wnv-JH-4qi">
+                    <rect key="frame" x="30" y="-1" width="223" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="어머니의 된장국" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wnv-JH-4qi">
-                    <rect key="frame" x="30" y="-1" width="223" height="20"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3000원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qth-OA-Hc7">
+                    <rect key="frame" x="252" y="-1" width="60" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="qth-OA-Hc7" secondAttribute="trailing" constant="8" id="7AS-Sj-pQ1"/>
+                <constraint firstItem="qth-OA-Hc7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="80q-JO-Ayo"/>
                 <constraint firstItem="Wnv-JH-4qi" firstAttribute="trailing" secondItem="qth-OA-Hc7" secondAttribute="trailing" constant="-59" id="Rmr-s7-NAF"/>
                 <constraint firstItem="Wnv-JH-4qi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="SMK-HI-mK9"/>
+                <constraint firstItem="Wnv-JH-4qi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-1" id="aYG-Ol-1pD"/>
+                <constraint firstItem="Wnv-JH-4qi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="bbJ-8J-RfK"/>
                 <constraint firstAttribute="trailing" secondItem="qth-OA-Hc7" secondAttribute="trailing" constant="10" id="zGd-NF-IPY"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Rmr-s7-NAF"/>
+                    <exclude reference="SMK-HI-mK9"/>
+                    <exclude reference="zGd-NF-IPY"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="nameLabel" destination="Wnv-JH-4qi" id="P1P-yi-ThN"/>
                 <outlet property="priceLabel" destination="qth-OA-Hc7" id="uDy-WB-rXe"/>

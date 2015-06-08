@@ -93,9 +93,6 @@ typedef void (^MenuInfoCompletion)(BOOL newData, NSDictionary *json, NSError *er
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    // GA configuration
-    self.screenName = NSStringFromClass([self class]);
 }
 
 - (void) viewDidLayoutSubviews {
@@ -144,11 +141,20 @@ typedef void (^MenuInfoCompletion)(BOOL newData, NSDictionary *json, NSError *er
 - (void) viewWillAppear:(BOOL)animated  {
     [super viewWillAppear:animated];
     
+    // GA configuration
+    self.screenName = NSStringFromClass([self class]);
+    
     NSLog(@"view will appear");
     
     CGRect frame = self.view.superview.frame;
     frame.size.width = CGRectGetWidth(frame) + CGRectGetMinX(frame);
-    frame.origin.x = 0;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        frame.origin.x = -5;
+    } else {
+        frame.origin.x = 0;
+    }
+
 //    CGRectMake(0,CGRectGetMinY(frame), CGRectGetWidth(frame) + CGRectGetMinX(frame), CGRectGetHeight(self.view.frame));
     self.view.superview.frame = frame;
 //    self.view.frame = frame;

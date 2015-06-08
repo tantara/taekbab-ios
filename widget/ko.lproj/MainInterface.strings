@@ -1,0 +1,30 @@
+
+/* Class = "UIButton"; normalTitle = "초기 환경설정이 필요합니다. (클릭)"; ObjectID = "C0V-hw-wjr"; */
+"C0V-hw-wjr.normalTitle" = "초기 환경설정이 필요합니다. (클릭)";
+
+/* Class = "UILabel"; text = "오늘의 식단"; ObjectID = "GcN-lo-r42"; */
+"GcN-lo-r42.text" = "오늘의 식단";
+
+/* Class = "UILabel"; text = "보여줄 메뉴가 없어요 ㅜ"; ObjectID = "HC4-33-Iu0"; */
+"HC4-33-Iu0.text" = "보여줄 메뉴가 없어요 ㅜ";
+
+/* Class = "UISegmentedControl"; KRz-bg-t17.segmentTitles[0] = "아침"; ObjectID = "KRz-bg-t17"; */
+"KRz-bg-t17.segmentTitles[0]" = "아침";
+
+/* Class = "UISegmentedControl"; KRz-bg-t17.segmentTitles[1] = "점심"; ObjectID = "KRz-bg-t17"; */
+"KRz-bg-t17.segmentTitles[1]" = "점심";
+
+/* Class = "UISegmentedControl"; KRz-bg-t17.segmentTitles[2] = "저녁"; ObjectID = "KRz-bg-t17"; */
+"KRz-bg-t17.segmentTitles[2]" = "저녁";
+
+/* Class = "UILabel"; text = "마지막 업데이트 00:00:00"; ObjectID = "bzP-nX-Rbg"; */
+"bzP-nX-Rbg.text" = "마지막 업데이트 00:00:00";
+
+/* Class = "UILabel"; text = "로딩중..."; ObjectID = "hQe-ox-eFQ"; */
+"hQe-ox-eFQ.text" = "로딩중...";
+
+/* Class = "UIButton"; normalTitle = "오늘의 식단"; ObjectID = "oNO-6m-Lkt"; */
+"oNO-6m-Lkt.normalTitle" = "오늘의 식단";
+
+/* Class = "UIButton"; normalTitle = "새로고침"; ObjectID = "t4N-nS-4J6"; */
+"t4N-nS-4J6.normalTitle" = "새로고침";

@@ -22,7 +22,12 @@
     Menu *customView = [[[NSBundle mainBundle] loadNibNamed:@"MenuView" owner:nil options:nil] lastObject];
     CGRect viewFrame = customView.frame;
 //    CGFloat scale = [UIScreen mainScreen].scale;
-    viewFrame.size.width = mainRect.size.width;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        viewFrame.size.width = mainRect.size.width - 170;
+    } else {
+        viewFrame.size.width = mainRect.size.width;
+    }
     
     customView.frame = viewFrame;
     
