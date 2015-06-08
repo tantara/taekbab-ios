@@ -81,6 +81,19 @@
     
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     
+    // load cookie
+    NSLog(@"%@", @"PersisteWebCookie");
+    NSData *cookiesdata = [[NSUserDefaults standardUserDefaults] objectForKey:@"MySavedCookies"];
+    if([cookiesdata length]) {
+        NSArray *cookies = [NSKeyedUnarchiver unarchiveObjectWithData:cookiesdata];
+        NSHTTPCookie *cookie;
+        
+        for (cookie in cookies) {
+            [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+        }
+    }
+    NSLog(@"%@", @"PersisteWebCookie Restored");
+    
     return YES;
 }
 
@@ -92,6 +105,13 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    // save cookie
+    NSLog(@"%@", @"PersisteWebCookie");
+    NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
+    NSData *cookieData = [NSKeyedArchiver archivedDataWithRootObject:cookies];
+    [[NSUserDefaults standardUserDefaults] setObject:cookieData forKey:@"MySavedCookies"];
+    NSLog(@"%@", @"PersisteWebCookie Saved");
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -106,17 +126,7 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    // 어플 자신이 호출된 경우에 얼럿창 띄우기
-//    NSString *strURL = [url absoluteString];
-//    
-//    UIAlertView *alertView= [[UIAlertView alloc] initWithTitle:@"call message"
-//                                                       message:strURL
-//                                                      delegate:nil
-//                                             cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//    
-//    [alertView  show];
-    
+- (void)handleOpenURL2:(NSURL*)url {
     NSLog(@"url recieved: %@", url);
     NSLog(@"query string: %@", [url query]);
     NSLog(@"host: %@", [url host]);
@@ -157,6 +167,10 @@
             [mainController performSelector:@selector(openURL:) withObject:url];
         }
     }
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    [self handleOpenURL2:url];
     
     return YES;
 }
@@ -201,18 +215,31 @@
                                                   otherButtonTitles:nil];
         [alertView show];
     } else {
-        NSString *alert = [apsInfo objectForKey:@"alert"];
-        NSLog(@"Received Push Alert: %@", alert);
+//        NSString *alert = [apsInfo objectForKey:@"alert"];
+//        NSLog(@"Received Push Alert: %@", alert);
+//        
+//        NSString *badge = [apsInfo objectForKey:@"badge"];
+//        NSLog(@"Received Push Badge: %@", badge);
+//        
+//        NSString *sound = [apsInfo objectForKey:@"sound"];
+//        NSLog(@"Received Push Sound: %@", sound);
+//        NSLog(@"userinfo: %@", userInfo);
         
-        NSString *badge = [apsInfo objectForKey:@"badge"];
-        NSLog(@"Received Push Badge: %@", badge);
+        NSDictionary *data = [apsInfo objectForKey:@"data"];
+        NSString *url = [data objectForKey:@"url"];
         
-        NSString *sound = [apsInfo objectForKey:@"sound"];
-        NSLog(@"Received Push Sound: %@", sound);
-        NSLog(@"userinfo: %@", userInfo);
+        if(url != nil && [url length] > 0) {
+             [self handleOpenURL2:url];
+        } else {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"안내", nil)
+                                                                message:[apsInfo objectForKey:@"alert"]
+                                                               delegate:self
+                                                      cancelButtonTitle:NSLocalizedString(@"확인", nil)
+                                                      otherButtonTitles:nil];
+            [alertView show];
+        }
     }
     application.applicationIconBadgeNumber = [[apsInfo objectForKey:@"badge"] integerValue];
-    
 #endif
 }
 

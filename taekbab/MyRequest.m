@@ -18,6 +18,8 @@
     
     NSMutableURLRequest *mutableRequest = [req mutableCopy];
     [mutableRequest addValue:[Agent toString] forHTTPHeaderField:@"X-AGENT"];
+    NSString * language = [[NSLocale preferredLanguages] objectAtIndex:0];
+    [mutableRequest addValue:language forHTTPHeaderField:@"X-LOCALE"];
 #if TARGET_IPHONE_SIMULATOR
         [mutableRequest addValue:@"ios-simulator" forHTTPHeaderField:@"X-DEVICE"];
 #else

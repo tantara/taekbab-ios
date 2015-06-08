@@ -48,6 +48,31 @@
 
 #pragma mark - webview
 
+-(BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+
+    BOOL headerIsPresent = [[request allHTTPHeaderFields] objectForKey:@"X-AGENT"]!=nil;
+    
+    if(headerIsPresent) return YES;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSURL *url = [request URL];
+//            NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+            
+            MyRequest *request = [MyRequest requestWithURL:url];
+            
+//            // set the new headers
+//            for(NSString *key in [webView.customHeaders allKeys]){
+//                [request addValue:[webView.customHeaders objectForKey:key] forHTTPHeaderField:key];
+//            }
+            
+            // reload the request
+            [webView loadRequest:request];
+        });
+    });
+    return NO;
+}
+
 -(void)webViewDidStartLoad:(UIWebView*)webView
 {
     // ProgressBar Setting

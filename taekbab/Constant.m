@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Constant.h"
 
-NSString *const BASE_URL = @"http://menu.tantara.me";
+NSString *const BASE_URL = @"http://dev.tantara.me";
 //NSString *const BASE_URL = @"http://menu.snu.ac";
 
 //PATH

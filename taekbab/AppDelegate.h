@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (void)handleOpenURL2:(NSURL*)url;
+
 
 @end
 
